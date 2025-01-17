@@ -226,3 +226,36 @@ function notas() {
   document.write(calificacion) ;
 }
 
+
+// ejercicio de vectores
+const vectorA = [3, 4, 5];
+const vectorB = [1, 2, 3];
+
+// 1. Suma de vectores
+function sumarVectores(a, b) {
+    return a.map((val, i) => val + b[i]);
+}
+
+// 2. Producto escalar
+function productoEscalar(a, b) {
+    return a.reduce((acumulador, val, i) => acumulador + val * b[i], 0);
+}
+
+// 3. Módulo (o magnitud) del vector
+function moduloVector(a) {
+    return Math.sqrt(a.reduce((acumulador, val) => acumulador + val ** 2, 0));
+}
+
+// Calculamos los resultados
+const suma = sumarVectores(vectorA, vectorB);
+const producto = productoEscalar(vectorA, vectorB);
+const moduloA = moduloVector(vectorA);
+const moduloB = moduloVector(vectorB);
+
+// Mostramos los resultados
+console.log("Vector A:", vectorA);
+console.log("Vector B:", vectorB);
+console.log("Suma de A y B:", suma);
+console.log("Producto escalar de A y B:", producto);
+console.log("Módulo de A:", moduloA.toFixed(2));
+console.log("Módulo de B:", moduloB.toFixed(2));
